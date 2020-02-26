@@ -1,0 +1,4 @@
+DELETE FROM "BOOKS"
+INSERT INTO "BOOKS" ("ID","NAME") VALUES( 1, 'In Search of Lost Time')
+INSERT INTO "BOOKS" ("ID","NAME") VALUES( 2, 'Ulysses')
+INSERT INTO "BOOKS" ("ID","NAME") VALUES( 3, 'Don Quixote')

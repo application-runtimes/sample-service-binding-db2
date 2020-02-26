@@ -21,17 +21,17 @@ public class Example {
         return bookRepo.findAll();
     }
     
-    @PostConstruct
-    public void afterInit() {
-        // adding a simple condition to check if data exists in the book table and insert data
-        // this prevent app inserting data into the db everytime it's restarted
-        if (bookRepo.count() == 0) {
-            List<Book> books = new ArrayList<Book>();
-            books.add(new Book("In Search of Lost Time"));
-            books.add(new Book("Ulysses"));
-            books.add(new Book("Don Quixote"));
-            bookRepo.saveAll(books);
-        }
-    }
+//    @PostConstruct
+//    public void afterInit() {
+//        // adding a simple condition to check if data exists in the book table and insert data
+//        // this prevent app inserting data into the db everytime it's restarted
+//        if (bookRepo.count() == 0) {
+//            List<Book> books = new ArrayList<Book>();
+//            books.add(new Book("In Search of Lost Time"));
+//            books.add(new Book("Ulysses"));
+//            books.add(new Book("Don Quixote"));
+//            bookRepo.saveAll(books);
+//        }
+//    }
     
 }
