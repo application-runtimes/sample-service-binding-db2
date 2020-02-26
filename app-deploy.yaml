@@ -8,7 +8,7 @@ metadata:
     commit.stack.appsody.dev/date: Fri Feb 21 16:00:55 2020 +0000
     commit.stack.appsody.dev/message: java-spring-boot2 - add additional stack maintainers
       to the stack (#681)
-    image.opencontainers.org/created: "2020-02-24T17:34:54-05:00"
+    image.opencontainers.org/created: "2020-02-25T22:50:26-05:00"
     stack.appsody.dev/authors: Erin Schnabel <schnabel@us.ibm.com>, Ozzy Osborne <ozzy@ca.ibm.com>,
       Richard Trotter <rtrotter@us.ibm.com>, Harish Yayi <hyayi@us.ibm.com>
     stack.appsody.dev/configured: docker.io/appsody/java-spring-boot2:0.3
@@ -28,24 +28,8 @@ metadata:
     stack.appsody.dev/version: 0.3.26
   name: sample-service-binding-db2
 spec:
-  applicationImage: harishyayi/sample-service-binding-db2:37
+  applicationImage: harishyayi/sample-service-binding-db2:0368
   createKnativeService: false
-  env:
-  - name: DB2_USERNAME
-    valueFrom:
-      secretKeyRef:
-        key: username
-        name: db2-secret
-  - name: DB2_PASSWORD
-    valueFrom:
-      secretKeyRef:
-        key: password
-        name: db2-secret
-  - name: DB2_URL
-    valueFrom:
-      secretKeyRef:
-        key: url
-        name: db2-secret
   expose: true
   livenessProbe:
     failureThreshold: 12
@@ -60,14 +44,6 @@ spec:
     labels:
       k8s-app: sample-service-binding-db2
   pullPolicy: Always
-  readinessProbe:
-    failureThreshold: 12
-    httpGet:
-      path: /actuator/health
-      port: 8080
-    initialDelaySeconds: 5
-    periodSeconds: 2
-    timeoutSeconds: 1
   service:
     annotations:
       prometheus.io/path: /actuator/prometheus
@@ -75,4 +51,12 @@ spec:
     type: NodePort
   stack: java-spring-boot2
   version: 1.0.0
+  volumeMounts:
+  - mountPath: /etc/secrets/db2
+    name: db2-secrets
+    readOnly: true
+  volumes:
+  - name: db2-secrets
+    secret:
+      secretName: db2-secrets
 status: {}

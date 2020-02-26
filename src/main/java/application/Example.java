@@ -6,16 +6,12 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/v1")
 public class Example {
-
-    @Value("${spring.datasource.url}")
-    String url;
     
     @Autowired
     BookRepository bookRepo;
