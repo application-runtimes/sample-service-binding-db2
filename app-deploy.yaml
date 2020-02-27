@@ -8,7 +8,7 @@ metadata:
     commit.stack.appsody.dev/date: Fri Feb 21 16:00:55 2020 +0000
     commit.stack.appsody.dev/message: java-spring-boot2 - add additional stack maintainers
       to the stack (#681)
-    image.opencontainers.org/created: "2020-02-26T10:01:53-05:00"
+    image.opencontainers.org/created: "2020-02-27T13:22:40-05:00"
     stack.appsody.dev/authors: Erin Schnabel <schnabel@us.ibm.com>, Ozzy Osborne <ozzy@ca.ibm.com>,
       Richard Trotter <rtrotter@us.ibm.com>, Harish Yayi <hyayi@us.ibm.com>
     stack.appsody.dev/configured: docker.io/appsody/java-spring-boot2:0.3
@@ -28,7 +28,7 @@ metadata:
     stack.appsody.dev/version: 0.3.26
   name: sample-service-binding-db2
 spec:
-  applicationImage: harishyayi/sample-service-binding-db2:0369
+  applicationImage: <<applicationImage>>
   createKnativeService: false
   expose: true
   livenessProbe:
