@@ -1,5 +1,5 @@
-apiVersion: appsody.dev/v1beta1
-kind: AppsodyApplication
+apiVersion: app.stacks/v1beta1
+kind: RuntimeComponent
 metadata:
   annotations:
     commit.stack.appsody.dev/author: Harish Yayi <yharish991@gmail.com>
